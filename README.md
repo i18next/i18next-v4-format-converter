@@ -2,7 +2,6 @@
 
 [![Actions](https://github.com/i18next/i18next-v4-format-converter/workflows/node/badge.svg)](https://github.com/i18next/i18next-v4-format-converter/actions?query=workflow%3Anode)
 [![Actions deno](https://github.com/i18next/i18next-v4-format-converter/workflows/deno/badge.svg)](https://github.com/i18next/i18next-v4-format-converter/actions?query=workflow%3Adeno)
-[![Travis](https://img.shields.io/travis/i18next/i18next-v4-format-converter/master.svg?style=flat-square)](https://travis-ci.org/i18next/i18next-v4-format-converter)
 [![npm version](https://img.shields.io/npm/v/i18next-v4-format-converter.svg?style=flat-square)](https://www.npmjs.com/package/i18next-v4-format-converter)
 
 This package helps to convert old i18next translation resources to the new i18next v4 json format.
@@ -34,6 +33,10 @@ Usage via CLI:
 
 ```sh
 npm install i18next-v4-format-converter -g
+
+# -i is the input path
+# -o is the output path
+# if the output path is not provided the, it will save the result in the input path (replaces existing files)
 
 i18next-v4-format-converter -i /Users/user/my/input -o /Users/user/my/output
 # i18next-v4-format-converter /Users/user/my/input -o /Users/user/my/output
