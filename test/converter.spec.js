@@ -30,13 +30,17 @@ describe('converter - transformNamespace', () => {
       someKey: 'normal',
       different: 'normal two',
       myKey: 'singular key',
-      myKey_plural: 'plural key'
+      myKey_plural: 'plural key',
+      otherKey_plural: 'plural first',
+      otherKey: 'singular after'
     }
     const expectedNew2 = {
       someKey: 'normal',
       different: 'normal two',
-      myKey: 'singular key',
-      myKey_other: 'plural key'
+      myKey_one: 'singular key',
+      myKey_other: 'plural key',
+      otherKey_other: 'plural first',
+      otherKey_one: 'singular after'
     }
     const new2 = transformNamespace('en', old2)
     should(new2).eql(expectedNew2)

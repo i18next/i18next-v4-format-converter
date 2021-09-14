@@ -19,14 +19,44 @@ Usage via code:
 
 ```js
 import { transformNamespace } from 'i18next-v4-format-converter'
-const transformed = transformNamespace('en', { my: 'key', myOther: 'key2' })
+const transformed = transformNamespace('en', {
+  someKey: 'normal',
+  different: 'normal two',
+  myKey: 'singular key',
+  myKey_plural: 'plural key'
+})
+// {
+//   someKey: 'normal',
+//   different: 'normal two',
+//   myKey_one: 'singular key',
+//   myKey_other: 'plural key'
+// }
 ```
 
 for Deno:
 
 ```js
 import { transformNamespace } from 'https://deno.land/x/i18next_v4_format_converter/index.js'
-const transformed = transformNamespace('en', { my: 'key', myOther: 'key2' })
+const transformed = transformNamespace('ar', {
+  someKey: 'normal',
+  different: 'normal two',
+  myKey_0: 'no keys',
+  myKey_1: 'one key',
+  myKey_2: 'two keys',
+  myKey_3: 'few {{count}} keys',
+  myKey_4: 'many {{count}} keys',
+  myKey_5: 'other {{count}} keys'
+})
+// {
+//   someKey: 'normal',
+//   different: 'normal two',
+//   myKey_zero: 'no keys',
+//   myKey_one: 'one key',
+//   myKey_two: 'two keys',
+//   myKey_few: 'few {{count}} keys',
+//   myKey_many: 'many {{count}} keys',
+//   myKey_other: 'other {{count}} keys'
+// }
 ```
 
 Usage via CLI:

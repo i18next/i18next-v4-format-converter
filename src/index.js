@@ -305,6 +305,7 @@ export function transformKey (code, key) {
 export function transformNamespace (code, ns) {
   const newNs = {}
   const keys = Object.keys(ns)
+  const strictSingularFixes = []
   for (let index = 0; index < keys.length; index++) {
     const key = keys[index]
     if (typeof ns[key] === 'object' && !Array.isArray(ns[key])) {
@@ -312,7 +313,21 @@ export function transformNamespace (code, ns) {
     } else {
       const newKey = transformKey(code, key)
       newNs[newKey] = ns[key]
+
+      // enforce _one for singular
+      if (key.endsWith('_plural')) {
+        const baseKey = key.substring(0, key.indexOf('_plural'))
+        if (ns[baseKey]) {
+          strictSingularFixes.push(baseKey)
+        }
+      }
     }
   }
+
+  // enforce _one for singular
+  strictSingularFixes.forEach((singularKey) => {
+    newNs[`${singularKey}_one`] = ns[singularKey]
+    delete newNs[singularKey]
+  })
   return newNs
 }

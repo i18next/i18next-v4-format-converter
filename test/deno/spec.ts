@@ -35,7 +35,7 @@ test('converter - transformNamespace', async () => {
   const expectedNew2 = {
     someKey: 'normal',
     different: 'normal two',
-    myKey: 'singular key',
+    myKey_one: 'singular key',
     myKey_other: 'plural key'
   }
   const new2 = transformNamespace('en', old2)
