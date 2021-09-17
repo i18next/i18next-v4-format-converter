@@ -305,6 +305,7 @@ export function transformKey (code, key) {
 export function transformNamespace (code, ns) {
   const newNs = {}
   const keys = Object.keys(ns)
+  const keysResultOrder = Object.keys(ns)
   const strictSingularFixes = []
   for (let index = 0; index < keys.length; index++) {
     const key = keys[index]
@@ -313,6 +314,7 @@ export function transformNamespace (code, ns) {
     } else {
       const newKey = transformKey(code, key)
       newNs[newKey] = ns[key]
+      keysResultOrder[keysResultOrder.indexOf(key)] = newKey
 
       // enforce _one for singular
       if (key.endsWith('_plural')) {
@@ -328,6 +330,12 @@ export function transformNamespace (code, ns) {
   strictSingularFixes.forEach((singularKey) => {
     newNs[`${singularKey}_one`] = ns[singularKey]
     delete newNs[singularKey]
+    keysResultOrder[keysResultOrder.indexOf(singularKey)] = `${singularKey}_one`
   })
-  return newNs
+
+  // fix order of props
+  return keysResultOrder.reduce((acc, curr) => {
+    acc[curr] = newNs[curr]
+    return acc
+  }, {})
 }
