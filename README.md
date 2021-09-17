@@ -6,6 +6,10 @@
 
 This package helps to convert old i18next translation resources to the new i18next v4 json format.
 
+## Online version
+
+There's also a web version you can directly use [here](https://i18next.github.io/i18next-v4-format-converter-web/).
+
 # Getting started
 
 Source can be loaded via [npm](https://www.npmjs.com/package/i18next-v4-format-converter).
