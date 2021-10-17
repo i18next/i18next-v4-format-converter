@@ -293,7 +293,7 @@ export function transformKey (code, key) {
   if (isNaN(oldSuffix) && oldSuffix !== 'plural') return key
   const cldrIndex = rule.toCldr[`_${oldSuffix}`]
   if (cldrIndex === undefined) return key
-  if (!FORMS[cldrIndex] === undefined) return key
+  if (FORMS[cldrIndex] === undefined) return key
 
   const newSuffix = FORMS[cldrIndex]
   splitted.pop()
