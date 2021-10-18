@@ -1,6 +1,6 @@
 {
   "name": "i18next-v4-format-converter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This package helps to convert old i18next translation resources to the new i18next v4 json format.",
   "keywords": [
     "i18next",
