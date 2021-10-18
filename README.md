@@ -79,6 +79,23 @@ i18next-v4-format-converter -i /Users/user/my/input -o /Users/user/my/output
 # i18next-v4-format-converter
 ```
 
+*Make sure your folder structure looks like this:*
+
+```sh
+└── language
+   └── namespace.json
+```
+
+i.e.
+```sh
+├── en
+│  ├── translation.json
+│  └── common.json
+└── de
+   ├── translation.json
+   └── common.json
+```
+
 ---
 
 <h3 align="center">Gold Sponsors</h3>

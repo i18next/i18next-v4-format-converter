@@ -283,7 +283,7 @@ export function transformKey (code, key) {
   if (key.indexOf('_') < 1) return key
 
   const [lngOnly] = code.split(/-|_/)
-  const rule = rules[code] || rules[lngOnly]
+  const rule = rules[code] || rules[lngOnly] || rules.dev
 
   if (!rule) return key
   if (Object.keys(rule.toCldr).length < 2) return key
