@@ -91,5 +91,38 @@ describe('converter - transformNamespace', () => {
     }
     const new3 = transformNamespace('ar', old3)
     should(new3).eql(expectedNew3)
+
+    const old4 = {
+      someKey: 'normal',
+      different: {
+        nested: 'whatever'
+      },
+      arr: ['1234', '123412341234'],
+      myKey_0: 'other {{count}} keys',
+      more: {
+        nesting: {
+          here: {
+            myKey_0: 'other keys'
+          }
+        }
+      }
+    }
+    const expectedNew4 = {
+      someKey: 'normal',
+      different: {
+        nested: 'whatever'
+      },
+      arr: ['1234', '123412341234'],
+      myKey_other: 'other {{count}} keys',
+      more: {
+        nesting: {
+          here: {
+            myKey_other: 'other keys'
+          }
+        }
+      }
+    }
+    const new4 = transformNamespace('ja', old4)
+    should(new4).eql(expectedNew4)
   })
 })

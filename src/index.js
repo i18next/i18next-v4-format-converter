@@ -286,7 +286,7 @@ export function transformKey (code, key) {
   const rule = rules[code] || rules[lngOnly] || rules.dev
 
   if (!rule) return key
-  if (Object.keys(rule.toCldr).length < 2) return key
+  if (Object.keys(rule.toCldr).length < 1) return key
 
   const splitted = key.split('_')
   const oldSuffix = splitted[splitted.length - 1]
