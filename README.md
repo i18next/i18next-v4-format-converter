@@ -66,6 +66,10 @@ const transformed = transformNamespace('ar', {
 Usage via CLI:
 
 ```sh
+# use it with npx
+npx i18next-v4-format-converter -i /Users/user/my/input -o /Users/user/my/output
+
+# or install it globally
 npm install i18next-v4-format-converter -g
 
 # -i is the input path
