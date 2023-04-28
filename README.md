@@ -4,7 +4,7 @@
 [![Actions deno](https://github.com/i18next/i18next-v4-format-converter/workflows/deno/badge.svg)](https://github.com/i18next/i18next-v4-format-converter/actions?query=workflow%3Adeno)
 [![npm version](https://img.shields.io/npm/v/i18next-v4-format-converter.svg?style=flat-square)](https://www.npmjs.com/package/i18next-v4-format-converter)
 
-This package helps to convert old i18next translation resources to the new i18next v4 json format.
+This package helps to convert old i18next translation resources to the new i18next v4 json format. *(It will only handle keys with the default pluralSeparator `_`)*
 
 ## Online version
 
