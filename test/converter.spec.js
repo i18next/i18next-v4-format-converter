@@ -11,7 +11,9 @@ describe('converter - transformNamespace', () => {
       myKey_2: 'two keys',
       myKey_3: 'few {{count}} keys',
       myKey_4: 'many {{count}} keys',
-      myKey_5: 'other {{count}} keys'
+      myKey_5: 'other {{count}} keys',
+      no_break_space: '\u00A0',
+      small_em_dash: '\uFE58'
     }
     const expectedNew1 = {
       someKey: 'normal',
@@ -21,7 +23,9 @@ describe('converter - transformNamespace', () => {
       myKey_two: 'two keys',
       myKey_few: 'few {{count}} keys',
       myKey_many: 'many {{count}} keys',
-      myKey_other: 'other {{count}} keys'
+      myKey_other: 'other {{count}} keys',
+      no_break_space: '\u00A0',
+      small_em_dash: '\uFE58'
     }
     const new1 = transformNamespace('ar', old1)
     should(new1).eql(expectedNew1)
