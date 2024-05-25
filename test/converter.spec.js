@@ -128,5 +128,18 @@ describe('converter - transformNamespace', () => {
     }
     const new4 = transformNamespace('ja', old4)
     should(new4).eql(expectedNew4)
+
+    const old5 = {
+      myKey_0: 'one key',
+      myKey_1: 'other {{count}} keys',
+      myKey_2: 'no keys'
+    }
+    const expectedNew5 = {
+      myKey_one: 'one key',
+      myKey_other: 'other {{count}} keys',
+      myKey_zero: 'no keys'
+    }
+    const new5 = transformNamespace('lv', old5)
+    should(new5).eql(expectedNew5)
   })
 })
