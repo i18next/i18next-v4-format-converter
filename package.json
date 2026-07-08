@@ -59,12 +59,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "7.16.7"
+    "@babel/runtime": "7.29.7"
   },
   "devDependencies": {
-    "@babel/core": "7.16.7",
-    "@babel/plugin-transform-runtime": "7.16.7",
-    "@babel/preset-env": "7.16.7",
+    "@babel/core": "7.29.7",
+    "@babel/plugin-transform-runtime": "7.29.7",
+    "@babel/preset-env": "7.29.7",
     "@types/mocha": "9.0.0",
     "@typescript-eslint/eslint-plugin": "5.9.0",
     "@typescript-eslint/parser": "5.9.0",
