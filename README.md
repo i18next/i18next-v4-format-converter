@@ -116,8 +116,6 @@ i.e.
 
 A translation management system built around the i18next ecosystem - [locize.com](https://www.locize.com?utm_source=i18next_v4_format_converter_readme&utm_medium=github&utm_campaign=readme).
 
-![locize](https://www.locize.com/img/ads/github_locize.png)
-
 With using [locize](https://www.locize.com/?utm_source=i18next_v4_format_converter_readme&utm_medium=github&utm_campaign=readme) you directly support the future of i18next.
 
 ---
